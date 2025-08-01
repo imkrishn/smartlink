@@ -8,7 +8,7 @@ import Personalize from "@/components/Personalize";
 import Image from "next/image";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   return (
     <div>
       <div className="lg:px-48 p-4">
@@ -31,4 +31,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
