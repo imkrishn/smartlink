@@ -3,13 +3,13 @@ import ShowPage from "@/components/ShowPage";
 import { User } from "@/types/UserType";
 import React from "react";
 
-interface PageProps {
+type Props = {
   params: {
     username: string;
   };
-}
+};
 
-const Page = async ({ params }: PageProps) => {
+const Page = async ({ params }: Props) => {
   const { username } = await params;
 
   async function getDetails(username: string) {

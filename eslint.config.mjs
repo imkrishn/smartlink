@@ -9,6 +9,9 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
+const parser = (await import("@typescript-eslint/parser")).default;
+const tsPlugin = (await import("@typescript-eslint/eslint-plugin")).default;
+
 export default [
   ...compat.extends(
     "next/core-web-vitals",
@@ -18,10 +21,10 @@ export default [
   {
     files: ["**/*.ts", "**/*.tsx"],
     languageOptions: {
-      parser: require.resolve("@typescript-eslint/parser"),
+      parser,
     },
     plugins: {
-      "@typescript-eslint": require("@typescript-eslint/eslint-plugin"),
+      "@typescript-eslint": tsPlugin,
     },
     rules: {
       "@typescript-eslint/no-explicit-any": "error",
